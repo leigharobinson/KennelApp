@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 //import the components we will need
 import EmployeeCard from "./EmployeeCard";
 import EmployeeManager from "../../modules/EmployeeManager";
-// import AnimalCard from "../animal/AnimalCard";
 
 const EmployeeList = () => {
   // The initial state is an empty array
@@ -15,6 +14,12 @@ const EmployeeList = () => {
       setEmployees(employeesFromAPI);
     });
   };
+  //Here is the delet function
+  const deleteEmployee = (id) => {
+    EmployeeManager.delete(id).then(() =>
+      EmployeeManager.getAll().then(setEmployees)
+    );
+  };
 
   // got the animals from the API on the component's first render
   useEffect(() => {
@@ -25,7 +30,11 @@ const EmployeeList = () => {
   return (
     <div className="container-cards">
       {employees.map((employee) => (
-        <EmployeeCard key={employee.id} employee={employee} />
+        <EmployeeCard
+          key={employee.id}
+          employee={employee}
+          deleteEmployee={deleteEmployee}
+        />
       ))}
     </div>
   );
