@@ -1,0 +1,32 @@
+import React, { useState, useEffect } from "react";
+import LocationManager from "../../modules/LocationManager";
+import "./LocationDetail.css";
+
+const LocationDetail = (props) => {
+  const [location, setLocation] = useState({ location: "" });
+
+  useEffect(() => {
+    //get(id) from AnimalManager and hang on to the data; put it into state
+    LocationManager.get(props.locationId).then((location) => {
+      setLocation({
+        location: location.location,
+      });
+    });
+  }, [props.locationId]);
+
+  return (
+    <div className="card">
+      <div className="card-content">
+        {/* <picture>
+          <img src={require("./dog.svg")} alt="My Dog" />
+        </picture> */}
+        <h3>
+          Location:
+          <span style={{ color: "darkslategrey" }}>{location.location}</span>
+        </h3>
+      </div>
+    </div>
+  );
+};
+
+export default LocationDetail;
