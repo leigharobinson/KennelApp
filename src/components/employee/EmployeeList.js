@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 //import the components we will need
 import EmployeeCard from "./EmployeeCard";
 import EmployeeManager from "../../modules/EmployeeManager";
+// import AnimalCard from "../animal/AnimalCard";
 
 const EmployeeList = () => {
   // The initial state is an empty array
@@ -24,7 +25,7 @@ const EmployeeList = () => {
   return (
     <div className="container-cards">
       {employees.map((employee) => (
-        <EmployeeCard />
+        <EmployeeCard key={employee.id} employee={employee} />
       ))}
     </div>
   );

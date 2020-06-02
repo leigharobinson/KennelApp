@@ -5,12 +5,11 @@
     { "id": 3, "name": "Esme", "breed": "Pitbull" }
   ],
   "employees": [
-    { "id": 1, "firstName": "Bobby", "LastName": "Sue", "employeeId": 1 },
-    { "id": 2, "firstName": "Dan", "LastName": "Mulligan", "employeeId": 2 },
+    { "id": 1, "name": "Bobby Sue", "employeeId": 1 },
+    { "id": 2, "name": "Dan Mulligan", "employeeId": 2 },
     {
       "id": 3,
-      "firstName": "Fergus",
-      "LastName": "Bartholomew",
+      "Name": "Fergus Bartholomew",
       "employeeId": 3
     }
   ],
@@ -20,8 +19,8 @@
     { "id": 3, "location": "East Nashville" }
   ],
   "owners": [
-    { "id": 1, "Name": "Anthony Granda", "phoneNumber": "(615)371-0024" },
-    { "id": 2, "Name": "Jason Stone", "phoneNumber": "(615)371-5524" },
-    { "id": 3, "Name": "Penny Robbins", "phoneNumber": "(615)371-6784" }
+    { "id": 1, "name": "Anthony Granda", "phoneNumber": "(615)371-0024" },
+    { "id": 2, "name": "Jason Stone", "phoneNumber": "(615)371-5524" },
+    { "id": 3, "name": "Penny Robbins", "phoneNumber": "(615)371-6784" }
   ]
 }
