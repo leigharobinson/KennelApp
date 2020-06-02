@@ -20,6 +20,7 @@ const AnimalList = () => {
       AnimalManager.getAll().then(setAnimals)
     );
   };
+
   // got the animals from the API on the component's first render
   useEffect(() => {
     getAnimals();
