@@ -14,6 +14,12 @@ const LocationList = () => {
       setlocations(locationsFromAPI);
     });
   };
+  //Here is the delet function
+  const deleteLocation = (id) => {
+    LocationManager.delete(id).then(() =>
+      LocationManager.getAll().then(setlocations)
+    );
+  };
 
   // got the animals from the API on the component's first render
   useEffect(() => {
@@ -24,7 +30,11 @@ const LocationList = () => {
   return (
     <div className="container-cards">
       {locations.map((location) => (
-        <LocationCard key={location.id} location={location} />
+        <LocationCard
+          key={location.id}
+          location={location}
+          deleteLocation={deleteLocation}
+        />
       ))}
     </div>
   );
