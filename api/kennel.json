@@ -1,10 +1,10 @@
 {
   "animals": [
-    { "id": 1, "name": "Doodles", "breed": "Poodle" },
-    { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-    { "id": 3, "name": "Esme", "breed": "Pitbull" },
-    { "id": 4, "name": "Phoebe", "breed": "Beagle" },
-    { "id": 5, "name": "Sherpa", "breed": "Samoyeds" }
+    { "id": 1, "name": "doodles", "breed": "poodle" },
+    { "id": 2, "name": "decker", "breed": "german shepherd" },
+    { "id": 3, "name": "esme", "breed": "pitbull" },
+    { "id": 4, "name": "phoebe", "breed": "beagle" },
+    { "id": 5, "name": "sherpa", "breed": "samoyeds" }
   ],
   "employees": [
     { "id": 1, "name": "Bobby Sue", "employeeId": 1 },
