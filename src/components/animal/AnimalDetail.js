@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
+import { firstLetterCase } from "../../modules/helpers";
 
 const AnimalDetail = (props) => {
   const [animal, setAnimal] = useState({ name: "", breed: "" });
@@ -10,8 +11,8 @@ const AnimalDetail = (props) => {
     //get(id) from AnimalManager and hang on to the data; put it into state
     AnimalManager.get(props.animalId).then((animal) => {
       setAnimal({
-        name: animal.name,
-        breed: animal.breed,
+        name: firstLetterCase(animal.name),
+        breed: firstLetterCase(animal.breed),
       });
       setIsLoading(false);
     });
