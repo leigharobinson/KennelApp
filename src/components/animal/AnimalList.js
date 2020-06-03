@@ -4,11 +4,11 @@ import AnimalCard from "./AnimalCard";
 import AnimalManager from "../../modules/AnimalManager";
 import { firstLetterCase } from "../../modules/helpers";
 
-const AnimalList = () => {
+const AnimalList = (props) => {
   // The initial state is an empty array
   const [animals, setAnimals] = useState([]);
 
-  const getAnimals = () => {
+  const getAnimals = (props) => {
     // After the data comes back from the API, we
     //  use the setAnimals function to update state
     return AnimalManager.getAll().then((animalsFromAPI) => {
@@ -30,22 +30,37 @@ const AnimalList = () => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
 
   return (
-    <div className="container-cards">
-      {animals.map(
-        (animal) => (
-          //Here is where i could target animal.name and make it uppercase
-          (animal.name = firstLetterCase(animal.name)),
-          (animal.breed = firstLetterCase(animal.breed)),
-          (
-            <AnimalCard
-              key={animal.id}
-              animal={animal}
-              deleteAnimal={deleteAnimal}
-            />
+    <>
+      {/* //add this button above your display of animal cards */}
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/animals/new");
+            console.log("you clicked me");
+          }}
+        >
+          Admit Animal
+        </button>
+      </section>
+      <div className="container-cards">
+        {animals.map(
+          (animal) => (
+            //Here is where i could target animal.name and make it uppercase
+            (animal.name = firstLetterCase(animal.name)),
+            (animal.breed = firstLetterCase(animal.breed)),
+            (
+              <AnimalCard
+                key={animal.id}
+                animal={animal}
+                deleteAnimal={deleteAnimal}
+              />
+            )
           )
-        )
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 export default AnimalList;

@@ -8,6 +8,10 @@ import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail";
 import LocationDetail from "./location/LocationDetail";
+import AnimalForm from "./animal/AnimalForm";
+import LocationForm from "./location/LocationForm";
+import EmployeeForm from "./employee/EmployeeForm";
+import OwnerForm from "./owner/OwnerForm";
 
 const ApplicationViews = () => {
   return (
@@ -19,11 +23,20 @@ const ApplicationViews = () => {
           return <Home />;
         }}
       />
+      {/* ///////////////////ANIMALS/////////////////// */}
+      {/* updated route: `/animals` */}
       <Route
         exact
         path="/animals"
         render={(props) => {
-          return <AnimalList />;
+          return <AnimalList {...props} />;
+        }}
+      />
+      {/* Our New Route */}
+      <Route
+        path="/animals/new"
+        render={(props) => {
+          return <AnimalForm {...props} />;
         }}
       />
       <Route
@@ -38,7 +51,6 @@ const ApplicationViews = () => {
           );
         }}
       />
-
       {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
@@ -47,11 +59,19 @@ const ApplicationViews = () => {
   matches only numbers after the final slash in the URL
   http://localhost:3000/animals/jack
 */}
+      {/* ///////////////////LOCATIONS/////////////////// */}
       <Route
         exact
-        path="/location"
+        path="/locations"
         render={(props) => {
-          return <LocationList />;
+          return <LocationList {...props} />;
+        }}
+      />
+      {/* // Our shiny new route. */}
+      <Route
+        path="/locations/new"
+        render={(props) => {
+          return <LocationForm {...props} />;
         }}
       />
       <Route
@@ -66,16 +86,34 @@ const ApplicationViews = () => {
           );
         }}
       />
+      {/* ///////////////////EPLOYEES/////////////////// */}
       <Route
-        path="/employee"
+        exact
+        path="/employees"
         render={(props) => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
+      {/* // Our shiny new route. */}
       <Route
-        path="/owner"
+        path="/employees/new"
         render={(props) => {
-          return <OwnerList />;
+          return <EmployeeForm {...props} />;
+        }}
+      />
+      {/* ///////////////////EPLOYEES/////////////////// */}
+      <Route
+        exact
+        path="/owners"
+        render={(props) => {
+          return <OwnerList {...props} />;
+        }}
+      />
+      {/* // Our shiny new route. */}
+      <Route
+        path="/owners/new"
+        render={(props) => {
+          return <OwnerForm {...props} />;
         }}
       />
     </React.Fragment>

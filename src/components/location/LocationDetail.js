@@ -20,7 +20,7 @@ const LocationDetail = (props) => {
     //invoke the delete function in AnimalManger and re-direct to the animal list.
     setIsLoading(true);
     LocationManager.delete(props.locationId).then(() =>
-      props.history.push("/location")
+      props.history.push("/locations")
     );
   };
 
