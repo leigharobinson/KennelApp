@@ -31,6 +31,7 @@ const AnimalList = (props) => {
 
   return (
     <>
+      {/* //add this button above your display of animal cards */}
       <section className="section-content">
         <button
           type="button"

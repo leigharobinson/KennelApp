@@ -29,7 +29,6 @@ const LocationList = (props) => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <>
-      {/* //add this button above your display of animal cards */}
       <section className="section-content">
         <button
           type="button"
@@ -38,7 +37,7 @@ const LocationList = (props) => {
             props.history.push("/locations/new");
           }}
         >
-          Admit Animal
+          Add Location
         </button>
       </section>
       <div className="container-cards">

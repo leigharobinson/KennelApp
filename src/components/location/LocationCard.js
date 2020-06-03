@@ -6,7 +6,7 @@ const LocationCard = (props) => {
     <div className="card">
       <div className="card-content">
         <h3>
-          Location:{" "}
+          Location:
           <span className="card-location">{props.location.location}</span>
         </h3>
         <button

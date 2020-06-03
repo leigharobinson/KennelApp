@@ -10,6 +10,8 @@ import AnimalDetail from "./animal/AnimalDetail";
 import LocationDetail from "./location/LocationDetail";
 import AnimalForm from "./animal/AnimalForm";
 import LocationForm from "./location/LocationForm";
+import EmployeeForm from "./employee/EmployeeForm";
+import OwnerForm from "./owner/OwnerForm";
 
 const ApplicationViews = () => {
   return (
@@ -60,7 +62,7 @@ const ApplicationViews = () => {
       {/* ///////////////////LOCATIONS/////////////////// */}
       <Route
         exact
-        path="/location"
+        path="/locations"
         render={(props) => {
           return <LocationList {...props} />;
         }}
@@ -69,7 +71,7 @@ const ApplicationViews = () => {
       <Route
         path="/locations/new"
         render={(props) => {
-          return <AnimalForm {...props} />;
+          return <LocationForm {...props} />;
         }}
       />
       <Route
@@ -84,16 +86,34 @@ const ApplicationViews = () => {
           );
         }}
       />
+      {/* ///////////////////EPLOYEES/////////////////// */}
       <Route
-        path="/employee"
+        exact
+        path="/employees"
         render={(props) => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
+      {/* // Our shiny new route. */}
       <Route
-        path="/owner"
+        path="/employees/new"
         render={(props) => {
-          return <OwnerList />;
+          return <EmployeeForm {...props} />;
+        }}
+      />
+      {/* ///////////////////EPLOYEES/////////////////// */}
+      <Route
+        exact
+        path="/owners"
+        render={(props) => {
+          return <OwnerList {...props} />;
+        }}
+      />
+      {/* // Our shiny new route. */}
+      <Route
+        path="/owners/new"
+        render={(props) => {
+          return <OwnerForm {...props} />;
         }}
       />
     </React.Fragment>

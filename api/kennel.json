@@ -44,33 +44,43 @@
       "name": "Gabe",
       "breed": "Chinook",
       "id": 9
+    },
+    {
+      "name": "Wanda",
+      "breed": "Labradoodle",
+      "id": 10
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Bobby Sue",
-      "employeeId": 1
+      "employeeIdx": 1
     },
     {
       "id": 2,
       "name": "Dan Mulligan",
-      "employeeId": 2
+      "employeeIdx": 2
     },
     {
       "id": 3,
       "name": "Fergus Bartholomew",
-      "employeeId": 3
+      "employeeIdx": 3
     },
     {
       "id": 4,
       "name": "Prue Halliwell",
-      "employeeId": 4
+      "employeeIdx": 4
     },
     {
       "id": 5,
       "name": "Wynona Ryder",
-      "employeeId": 5
+      "employeeIdx": 5
+    },
+    {
+      "name": "Berry Blackfeild",
+      "employeeIdx": "8888888",
+      "id": 6
     }
   ],
   "locations": [
@@ -89,6 +99,14 @@
     {
       "id": 4,
       "location": "West Nashville"
+    },
+    {
+      "location": "Spring Hill",
+      "id": 5
+    },
+    {
+      "location": "Brentwood",
+      "id": 6
     }
   ],
   "owners": [
@@ -116,6 +134,11 @@
       "id": 5,
       "name": "Roger Willson",
       "phoneNumber": "(615)371-5544"
+    },
+    {
+      "name": "Billy Hill",
+      "phoneNumber": "615-54-3456",
+      "id": 6
     }
   ]
 }
