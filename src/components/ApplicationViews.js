@@ -8,6 +8,8 @@ import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail";
 import LocationDetail from "./location/LocationDetail";
+import AnimalForm from "./animal/AnimalForm";
+import LocationForm from "./location/LocationForm";
 
 const ApplicationViews = () => {
   return (
@@ -19,11 +21,20 @@ const ApplicationViews = () => {
           return <Home />;
         }}
       />
+      {/* ///////////////////ANIMALS/////////////////// */}
+      {/* updated route: `/animals` */}
       <Route
         exact
         path="/animals"
         render={(props) => {
-          return <AnimalList />;
+          return <AnimalList {...props} />;
+        }}
+      />
+      {/* Our New Route */}
+      <Route
+        path="/animals/new"
+        render={(props) => {
+          return <AnimalForm {...props} />;
         }}
       />
       <Route
@@ -38,7 +49,6 @@ const ApplicationViews = () => {
           );
         }}
       />
-
       {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
@@ -47,11 +57,19 @@ const ApplicationViews = () => {
   matches only numbers after the final slash in the URL
   http://localhost:3000/animals/jack
 */}
+      {/* ///////////////////LOCATIONS/////////////////// */}
       <Route
         exact
         path="/location"
         render={(props) => {
-          return <LocationList />;
+          return <LocationList {...props} />;
+        }}
+      />
+      {/* // Our shiny new route. */}
+      <Route
+        path="/locations/new"
+        render={(props) => {
+          return <AnimalForm {...props} />;
         }}
       />
       <Route

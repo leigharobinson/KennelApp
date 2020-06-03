@@ -1,29 +1,121 @@
 {
   "animals": [
-    { "id": 1, "name": "doodles", "breed": "poodle" },
-    { "id": 2, "name": "decker", "breed": "german shepherd" },
-    { "id": 3, "name": "esme", "breed": "pitbull" },
-    { "id": 4, "name": "phoebe", "breed": "beagle" },
-    { "id": 5, "name": "sherpa", "breed": "samoyeds" }
+    {
+      "id": 1,
+      "name": "doodles",
+      "breed": "poodle"
+    },
+    {
+      "id": 2,
+      "name": "decker",
+      "breed": "german shepherd"
+    },
+    {
+      "id": 3,
+      "name": "esme",
+      "breed": "pitbull"
+    },
+    {
+      "id": 4,
+      "name": "phoebe",
+      "breed": "beagle"
+    },
+    {
+      "id": 5,
+      "name": "sherpa",
+      "breed": "samoyeds"
+    },
+    {
+      "name": "Spot",
+      "breed": "jack russel",
+      "id": 6
+    },
+    {
+      "name": "Jack",
+      "breed": "Bulldog",
+      "id": 7
+    },
+    {
+      "name": "Samson",
+      "breed": " Louisiana Catahoula Leopard Dog",
+      "id": 8
+    },
+    {
+      "name": "Gabe",
+      "breed": "Chinook",
+      "id": 9
+    }
   ],
   "employees": [
-    { "id": 1, "name": "Bobby Sue", "employeeId": 1 },
-    { "id": 2, "name": "Dan Mulligan", "employeeId": 2 },
-    { "id": 3, "name": "Fergus Bartholomew", "employeeId": 3 },
-    { "id": 4, "name": "Prue Halliwell", "employeeId": 4 },
-    { "id": 5, "name": "Wynona Ryder", "employeeId": 5 }
+    {
+      "id": 1,
+      "name": "Bobby Sue",
+      "employeeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Dan Mulligan",
+      "employeeId": 2
+    },
+    {
+      "id": 3,
+      "name": "Fergus Bartholomew",
+      "employeeId": 3
+    },
+    {
+      "id": 4,
+      "name": "Prue Halliwell",
+      "employeeId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wynona Ryder",
+      "employeeId": 5
+    }
   ],
   "locations": [
-    { "id": 1, "location": "North Nashville" },
-    { "id": 2, "location": "South Nashville" },
-    { "id": 3, "location": "East Nashville" },
-    { "id": 4, "location": "West Nashville" }
+    {
+      "id": 1,
+      "location": "North Nashville"
+    },
+    {
+      "id": 2,
+      "location": "South Nashville"
+    },
+    {
+      "id": 3,
+      "location": "East Nashville"
+    },
+    {
+      "id": 4,
+      "location": "West Nashville"
+    }
   ],
   "owners": [
-    { "id": 1, "name": "Anthony Granda", "phoneNumber": "(615)371-0024" },
-    { "id": 2, "name": "Jason Stone", "phoneNumber": "(615)371-5524" },
-    { "id": 3, "name": "Penny Robbins", "phoneNumber": "(615)371-6784" },
-    { "id": 4, "name": "William Dubbs", "phoneNumber": "(615)371-0001" },
-    { "id": 5, "name": "Roger Willson", "phoneNumber": "(615)371-5544" }
+    {
+      "id": 1,
+      "name": "Anthony Granda",
+      "phoneNumber": "(615)371-0024"
+    },
+    {
+      "id": 2,
+      "name": "Jason Stone",
+      "phoneNumber": "(615)371-5524"
+    },
+    {
+      "id": 3,
+      "name": "Penny Robbins",
+      "phoneNumber": "(615)371-6784"
+    },
+    {
+      "id": 4,
+      "name": "William Dubbs",
+      "phoneNumber": "(615)371-0001"
+    },
+    {
+      "id": 5,
+      "name": "Roger Willson",
+      "phoneNumber": "(615)371-5544"
+    }
   ]
 }
