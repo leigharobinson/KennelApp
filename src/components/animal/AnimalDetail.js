@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
 import { firstLetterCase } from "../../modules/helpers";
@@ -10,11 +11,15 @@ const AnimalDetail = (props) => {
   useEffect(() => {
     //get(id) from AnimalManager and hang on to the data; put it into state
     AnimalManager.get(props.animalId).then((animal) => {
-      setAnimal({
-        name: firstLetterCase(animal.name),
-        breed: firstLetterCase(animal.breed),
-      });
-      setIsLoading(false);
+      if (animal.id) {
+        setAnimal({
+          name: firstLetterCase(animal.name),
+          breed: firstLetterCase(animal.breed),
+        });
+      } else {
+        props.history.push("/noIdinDB");
+      }
+      // setIsLoading(false);
     });
   }, [props.animalId]);
 
