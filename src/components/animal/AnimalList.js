@@ -8,7 +8,7 @@ const AnimalList = (props) => {
   // The initial state is an empty array
   const [animals, setAnimals] = useState([]);
 
-  const getAnimals = (props) => {
+  const getAnimals = () => {
     // After the data comes back from the API, we
     //  use the setAnimals function to update state
     return AnimalManager.getAll().then((animalsFromAPI) => {
@@ -55,6 +55,7 @@ const AnimalList = (props) => {
                 key={animal.id}
                 animal={animal}
                 deleteAnimal={deleteAnimal}
+                {...props}
               />
             )
           )
