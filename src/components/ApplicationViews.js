@@ -1,18 +1,25 @@
 import { Route, Redirect, Switch } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-import AnimalList from "./animal/AnimalList";
 import NotFoundPage from "./notfound404/NotFoundPage";
 //only include these once they are built - previous practice exercise
 import LocationList from "./location/LocationList";
-import EmployeeList from "./employee/EmployeeList";
-import OwnerList from "./owner/OwnerList";
-import AnimalDetail from "./animal/AnimalDetail";
 import LocationDetail from "./location/LocationDetail";
-import AnimalForm from "./animal/AnimalForm";
 import LocationForm from "./location/LocationForm";
+import LocationEditForm from "./location/LocationEditForm";
+
+import AnimalList from "./animal/AnimalList";
+import AnimalDetail from "./animal/AnimalDetail";
+import AnimalForm from "./animal/AnimalForm";
+import AnimalEditForm from "./animal/AnimalEditForm";
+
+import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from "./employee/EmployeeForm";
+import EmployeeEditForm from "./employee/EmployeeEditForm";
+
+import OwnerList from "./owner/OwnerList";
 import OwnerForm from "./owner/OwnerForm";
+import OwnerEditForm from "./owner/OwnerEditForm";
 import Login from "./auth/Login";
 
 import NotFoundID from "./animal/IdNotFound";
@@ -51,7 +58,6 @@ const ApplicationViews = () => {
             }
           }}
         />
-        {/* Our New Route */}
         <Route
           path="/animals/new"
           render={(props) => {
@@ -59,25 +65,32 @@ const ApplicationViews = () => {
           }}
         />
         <Route
+          exact
           path="/animals/:animalId(\d+)"
           render={(props) => {
-            // Pass the animalId to the AnimalDetailComponent
-            return (
-              <AnimalDetail
-                animalId={parseInt(props.match.params.animalId)}
-                {...props}
-              />
-            );
+            if (isAuthenticated()) {
+              return (
+                <AnimalDetail
+                  animalId={parseInt(props.match.params.animalId)}
+                  {...props}
+                />
+              );
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
-        {/*
-    This is a new route to handle a URL with the following pattern:
-    http://localhost:3000/animals/1
-
-    It will not handle the following URL because the `(\d+)`
-    matches only numbers after the final slash in the URL
-    http://localhost:3000/animals/jack
-  */}
+        <Route
+          path="/animals/:animalId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <AnimalEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
+        ); }} />
         {/* ///////////////////LOCATIONS/////////////////// */}
         <Route
           exact
@@ -90,7 +103,6 @@ const ApplicationViews = () => {
             }
           }}
         />
-        {/* // Our shiny new route. */}
         <Route
           path="/locations/new"
           render={(props) => {
@@ -98,15 +110,30 @@ const ApplicationViews = () => {
           }}
         />
         <Route
+          exact
           path="/locations/:locationId(\d+)"
           render={(props) => {
-            // Pass the animalId to the AnimalDetailComponent
-            return (
-              <LocationDetail
-                locationId={parseInt(props.match.params.locationId)}
-                {...props}
-              />
-            );
+            if (isAuthenticated()) {
+              return (
+                <LocationDetail
+                  locationId={parseInt(props.match.params.locationId)}
+                  {...props}
+                />
+              );
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
+        <Route
+          exact
+          path="/locations/:locationId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <LocationEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
         {/* ///////////////////EPLOYEES/////////////////// */}
@@ -128,6 +155,17 @@ const ApplicationViews = () => {
             return <EmployeeForm {...props} />;
           }}
         />
+        <Route
+          exact
+          path="/employees/:employeeId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <EmployeeEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
         {/* ///////////////////OWNERS/////////////////// */}
         <Route
           exact
@@ -147,6 +185,18 @@ const ApplicationViews = () => {
             return <OwnerForm {...props} />;
           }}
         />
+        <Route
+          exact
+          path="/owners/:ownerId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <OwnerEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
+        {/* ///////////////////FOR WHEN THINGS BREAK/////////////////// */}
         <Route path="/noIdinDB" component={NotFoundID} />
         <Route
           render={(props) => {

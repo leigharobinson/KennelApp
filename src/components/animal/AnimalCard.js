@@ -13,6 +13,12 @@ const AnimalCard = (props) => {
         </h3>
         <button
           type="button"
+          onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}
+        >
+          Edit
+        </button>
+        <button
+          type="button"
           onClick={() => props.deleteAnimal(props.animal.id)}
         >
           Discharge

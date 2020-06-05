@@ -79,10 +79,6 @@
       "location": "North Nashville"
     },
     {
-      "id": 2,
-      "location": "South Nashville"
-    },
-    {
       "id": 3,
       "location": "East Nashville"
     },
@@ -97,6 +93,18 @@
     {
       "location": "Brentwood",
       "id": 6
+    },
+    {
+      "location": "Columbia",
+      "id": 7
+    },
+    {
+      "location": "Spring Hill",
+      "id": 8
+    },
+    {
+      "location": "Columbia",
+      "id": 9
     }
   ],
   "owners": [

@@ -7,7 +7,7 @@ class NotFoundID extends React.Component {
     return (
       <div>
         <h1>No ID match</h1>
-        <img src={pugError404} />
+        <img class="pugImage" src={pugError404} />
         <p style={{ textAlign: "center" }}>
           <Link to="/">Go to Home </Link>
         </p>
