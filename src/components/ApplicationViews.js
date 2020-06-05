@@ -97,7 +97,13 @@ const ApplicationViews = () => {
           path="/locations"
           render={(props) => {
             if (isAuthenticated()) {
-              return <LocationList {...props} />;
+              return (
+                <LocationList
+                  history={props.history}
+                  location={props.location}
+                  match={props.match}
+                />
+              );
             } else {
               return <Redirect to="/login" />;
             }
