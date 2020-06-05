@@ -46,6 +46,7 @@ const LocationList = (props) => {
             key={location.id}
             location={location}
             deleteLocation={deleteLocation}
+            // What the hell is going on here with {...props}
             {...props}
           />
         ))}

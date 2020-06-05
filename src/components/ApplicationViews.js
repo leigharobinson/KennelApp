@@ -15,9 +15,11 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 
 import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from "./employee/EmployeeForm";
+import EmployeeEditForm from "./employee/EmployeeEditForm";
 
 import OwnerList from "./owner/OwnerList";
 import OwnerForm from "./owner/OwnerForm";
+import OwnerEditForm from "./owner/OwnerEditForm";
 import Login from "./auth/Login";
 
 import NotFoundID from "./animal/IdNotFound";
@@ -108,6 +110,7 @@ const ApplicationViews = () => {
           }}
         />
         <Route
+          exact
           path="/locations/:locationId(\d+)"
           render={(props) => {
             if (isAuthenticated()) {
@@ -152,6 +155,17 @@ const ApplicationViews = () => {
             return <EmployeeForm {...props} />;
           }}
         />
+        <Route
+          exact
+          path="/employees/:employeeId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <EmployeeEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
         {/* ///////////////////OWNERS/////////////////// */}
         <Route
           exact
@@ -171,6 +185,18 @@ const ApplicationViews = () => {
             return <OwnerForm {...props} />;
           }}
         />
+        <Route
+          exact
+          path="/owners/:ownerId(\d+)/edit"
+          render={(props) => {
+            if (isAuthenticated()) {
+              return <OwnerEditForm {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
+        {/* ///////////////////FOR WHEN THINGS BREAK/////////////////// */}
         <Route path="/noIdinDB" component={NotFoundID} />
         <Route
           render={(props) => {

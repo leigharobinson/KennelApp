@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
 import { firstLetterCase } from "../../modules/helpers";

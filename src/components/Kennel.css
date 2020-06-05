@@ -38,6 +38,12 @@ address {
   margin: 0 0 1.5em;
 }
 
+.pugImage {
+  display: block;
+  border: 0;
+  width: 400px;
+  height: auto;
+}
 img {
   display: block;
   border: 0;

@@ -10,7 +10,7 @@ const LocationCard = (props) => {
         </picture> */}
         <h3>
           Location:
-          <span className="card-location">{props.location.location}</span>
+          <span className="card-locationName">{props.location.location}</span>
         </h3>
         <button
           type="button"
