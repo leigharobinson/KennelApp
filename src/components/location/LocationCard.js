@@ -10,23 +10,25 @@ const LocationCard = (props) => {
         </picture> */}
         <h3>
           Location:
-          <span className="card-locationName">{props.location.location}</span>
+          <span className="card-locationName">
+            {props.locationVal.location}
+          </span>
         </h3>
         <button
           type="button"
           onClick={() =>
-            props.history.push(`/locations/${props.location.id}/edit`)
+            props.history.push(`/locations/${props.locationVal.id}/edit`)
           }
         >
           Edit
         </button>
         <button
           type="button"
-          onClick={() => props.deleteLocation(props.location.id)}
+          onClick={() => props.deleteLocation(props.locationVal.id)}
         >
           Close
         </button>
-        <Link to={`/locations/${props.location.id}`}>
+        <Link to={`/locations/${props.locationVal.id}`}>
           <button>Details</button>
         </Link>
       </div>
