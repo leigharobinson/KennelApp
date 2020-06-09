@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
 import { firstLetterCase } from "../../modules/helpers";
-
 const AnimalDetail = (props) => {
   const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
   const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +41,7 @@ const AnimalDetail = (props) => {
           Name: <span style={{ color: "darkslategrey" }}>{animal.name}</span>
         </h3>
         <p>Breed: {animal.breed}</p>
-        <p>Assigned Employee: {animal.employeeId}</p>
+        {/* <p>Assigned Employee: {employeeId.name}}</p> */}
 
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge

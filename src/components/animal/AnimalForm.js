@@ -4,7 +4,7 @@ import EmployeeManager from "../../modules/EmployeeManager";
 import "./AnimalForm.css";
 
 const AnimalForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: [] });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -17,7 +17,7 @@ const AnimalForm = (props) => {
    */
   const constructNewAnimal = (evt) => {
     evt.preventDefault();
-    if (animal.name === "" || animal.breed === "") {
+    if (!animal.name || !animal.breed || !animal.employeeId) {
       window.alert("Please input an animal name and breed and Employee");
     } else {
       setIsLoading(true);

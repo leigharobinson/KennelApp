@@ -10,7 +10,7 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "employeeId": 1
+      "employeeId": "1"
     },
     {
       "name": "Jack",
@@ -31,33 +31,37 @@
       "id": 6
     },
     {
-      "name": "Amethyst ",
-      "breed": "Labradoodle",
-      "employeeId": 1,
+      "name": "DOG",
+      "breed": "DOG",
+      "employeeId": 3,
       "id": 7
-    },
-    {
-      "name": "Sade",
-      "breed": "Sharpe",
-      "employeeId": 2,
-      "id": 8
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Jessica Younker",
-      "employeeIdx": 1
+      "employeeIdx": 90000909900
     },
     {
       "id": 2,
       "name": "Jordan Nelson",
-      "employeeIdx": 2
+      "employeeIdx": 290090999
     },
     {
       "id": 3,
       "name": "Zoe LeBlanc",
-      "employeeIdx": 3
+      "employeeIdx": 38990900
+    },
+    {
+      "name": "Steeve",
+      "employeeIdx": 9898098809,
+      "id": 4
+    },
+    {
+      "name": "Marshelll",
+      "employeeIdx": 909099837938,
+      "id": 5
     }
   ],
   "locations": [
@@ -74,24 +78,8 @@
       "location": "West Nashville"
     },
     {
-      "location": "Spring Hill",
-      "id": 5
-    },
-    {
       "location": "Brentwood",
       "id": 6
-    },
-    {
-      "location": "Columbia",
-      "id": 7
-    },
-    {
-      "location": "Spring Hill",
-      "id": 8
-    },
-    {
-      "location": "Columbia",
-      "id": 9
     }
   ],
   "owners": [
