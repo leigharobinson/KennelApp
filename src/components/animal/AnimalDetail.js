@@ -5,7 +5,7 @@ import "./AnimalDetail.css";
 import { firstLetterCase } from "../../modules/helpers";
 
 const AnimalDetail = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const AnimalDetail = (props) => {
         setAnimal({
           name: firstLetterCase(animal.name),
           breed: firstLetterCase(animal.breed),
+          employee: animal.employeeId,
         });
       } else {
         props.history.push("/noIdinDB");
@@ -41,6 +42,8 @@ const AnimalDetail = (props) => {
           Name: <span style={{ color: "darkslategrey" }}>{animal.name}</span>
         </h3>
         <p>Breed: {animal.breed}</p>
+        <p>Assigned Employee: {animal.employeeId}</p>
+
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge
         </button>

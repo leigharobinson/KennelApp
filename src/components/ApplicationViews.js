@@ -16,6 +16,7 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from "./employee/EmployeeForm";
 import EmployeeEditForm from "./employee/EmployeeEditForm";
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimals";
 
 import OwnerList from "./owner/OwnerList";
 import OwnerForm from "./owner/OwnerForm";
@@ -170,6 +171,12 @@ const ApplicationViews = () => {
             } else {
               return <Redirect to="/login" />;
             }
+          }}
+        />
+        <Route
+          path="/employees/:employeeId(\d+)/details"
+          render={(props) => {
+            return <EmployeeWithAnimals {...props} />;
           }}
         />
         {/* ///////////////////OWNERS/////////////////// */}
