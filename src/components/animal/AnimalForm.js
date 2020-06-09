@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
+import EmployeeManager from "../../modules/EmployeeManager";
 import "./AnimalForm.css";
 
 const AnimalForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -17,13 +18,26 @@ const AnimalForm = (props) => {
   const constructNewAnimal = (evt) => {
     evt.preventDefault();
     if (animal.name === "" || animal.breed === "") {
-      window.alert("Please input an animal name and breed");
+      window.alert("Please input an animal name and breed and Employee");
     } else {
       setIsLoading(true);
       // Create the animal and redirect user to animal list
       AnimalManager.post(animal).then(() => props.history.push("/animals"));
     }
   };
+  const [employees, setEmployees] = useState([]);
+
+  const getEmployees = () => {
+    // After the data comes back from the API, we
+    //  use the setEmployees function to update state
+    return EmployeeManager.getAll().then((employeesFromAPI) => {
+      setEmployees(employeesFromAPI);
+    });
+  };
+  // got the employees from the API on the component's first render
+  useEffect(() => {
+    getEmployees();
+  }, []);
 
   return (
     <>
@@ -48,6 +62,19 @@ const AnimalForm = (props) => {
             <label htmlFor="breed">Breed</label>
           </div>
           <div className="alignRight">
+            <select
+              className="form-control"
+              id="employeeId"
+              value={animal.employeeId}
+              onChange={handleFieldChange}
+            >
+              {employees.map((employee) => (
+                <option key={employee.id} value={employee.id}>
+                  {employee.name}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="employeeId"> Employee </label>
             <button
               type="button"
               disabled={isLoading}

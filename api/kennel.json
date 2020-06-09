@@ -1,76 +1,63 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "doodles",
-      "breed": "poodle"
-    },
-    {
       "id": 2,
-      "name": "decker",
-      "breed": "german shepherd"
+      "name": "Doodles",
+      "breed": "German Sheperd",
+      "employeeId": 3
     },
     {
       "id": 3,
-      "name": "esme",
-      "breed": "pitbull"
-    },
-    {
-      "id": 4,
-      "name": "phoebe",
-      "breed": "beagle"
-    },
-    {
-      "id": 5,
-      "name": "sherpa",
-      "breed": "samoyeds"
-    },
-    {
-      "name": "Spot",
-      "breed": "jack russel",
-      "id": 6
+      "name": "Esme",
+      "breed": "Pitbull",
+      "employeeId": 1
     },
     {
       "name": "Jack",
-      "breed": "Bulldog",
+      "breed": "Big cat",
+      "id": 4,
+      "employeeId": 1
+    },
+    {
+      "id": 5,
+      "name": "Angus",
+      "breed": "Gerbil",
+      "employeeId": 3
+    },
+    {
+      "name": "Babe Ruth",
+      "breed": "Hound",
+      "employeeId": 2,
+      "id": 6
+    },
+    {
+      "name": "Amethyst ",
+      "breed": "Labradoodle",
+      "employeeId": 1,
       "id": 7
     },
     {
-      "name": "Samson",
-      "breed": " Louisiana Catahoula Leopard Dog",
+      "name": "Sade",
+      "breed": "Sharpe",
+      "employeeId": 2,
       "id": 8
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "Bobby Sue",
+      "name": "Jessica Younker",
       "employeeIdx": 1
     },
     {
       "id": 2,
-      "name": "Dan Mulligan",
+      "name": "Jordan Nelson",
       "employeeIdx": 2
     },
     {
       "id": 3,
-      "name": "Fergus Bartholomew",
+      "name": "Zoe LeBlanc",
       "employeeIdx": 3
-    },
-    {
-      "id": 4,
-      "name": "Prue Halliwell",
-      "employeeIdx": 4
-    },
-    {
-      "id": 5,
-      "name": "Wynona Ryder",
-      "employeeIdx": 5
-    },
-    {
-      "name": "Berry Blackfeild",
-      "employeeIdx": "8888888",
-      "id": 6
     }
   ],
   "locations": [
@@ -80,7 +67,7 @@
     },
     {
       "id": 3,
-      "location": "East Nashvilleeee"
+      "location": "East Nashville"
     },
     {
       "id": 4,

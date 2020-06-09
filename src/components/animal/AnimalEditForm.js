@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalForm.css";
-
+import EmployeeManager from "../../modules/EmployeeManager";
 const AnimalEditForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -21,6 +21,7 @@ const AnimalEditForm = (props) => {
       id: props.match.params.animalId,
       name: animal.name,
       breed: animal.breed,
+      employeeId: animal.employeeId,
     };
 
     AnimalManager.update(editedAnimal).then(() =>
@@ -33,6 +34,20 @@ const AnimalEditForm = (props) => {
       setAnimal(animal);
       setIsLoading(false);
     });
+  }, []);
+
+  const [employees, setEmployees] = useState([]);
+
+  const getEmployees = () => {
+    // After the data comes back from the API, we
+    //  use the setEmployees function to update state
+    return EmployeeManager.getAll().then((employeesFromAPI) => {
+      setEmployees(employeesFromAPI);
+    });
+  };
+  // got the employees from the API on the component's first render
+  useEffect(() => {
+    getEmployees();
   }, []);
 
   return (
@@ -61,6 +76,19 @@ const AnimalEditForm = (props) => {
             <label htmlFor="breed">Breed</label>
           </div>
           <div className="alignRight">
+            <select
+              className="form-control"
+              id="employeeId"
+              value={animal.employeeId}
+              onChange={handleFieldChange}
+            >
+              {employees.map((employee) => (
+                <option key={employee.id} value={employee.id}>
+                  {employee.name}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="employeeId"> Employee </label>
             <button
               type="button"
               disabled={isLoading}

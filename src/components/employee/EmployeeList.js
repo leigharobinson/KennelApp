@@ -7,9 +7,9 @@ const EmployeeList = (props) => {
   // The initial state is an empty array
   const [employees, setEmployees] = useState([]);
 
-  const getEmployees = (props) => {
+  const getEmployees = () => {
     // After the data comes back from the API, we
-    //  use the setAnimals function to update state
+    //  use the setEmployees function to update state
     return EmployeeManager.getAll().then((employeesFromAPI) => {
       setEmployees(employeesFromAPI);
     });
