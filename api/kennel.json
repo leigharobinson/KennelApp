@@ -1,63 +1,60 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "Doodles",
-      "breed": "German Sheperd",
-      "employeeId": 3
+      "id": 1,
+      "name": "Domino",
+      "breed": "Dalmatian ",
+      "employeeId": 1
     },
     {
       "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull",
-      "employeeId": 1
-    },
-    {
-      "name": "Jack",
-      "breed": "Big cat",
-      "id": 4,
-      "employeeId": 1
-    },
-    {
-      "id": 5,
-      "name": "Angus",
-      "breed": "Gerbil",
+      "name": "Moca",
+      "breed": "german shepherd",
       "employeeId": 3
     },
     {
-      "name": "Babe Ruth",
-      "breed": "Hound",
-      "employeeId": 2,
-      "id": 6
+      "id": 8,
+      "name": "Batdog",
+      "breed": "Terrier ",
+      "employeeId": 3
     },
     {
-      "name": "Amethyst ",
-      "breed": "Labradoodle",
+      "name": "Lukess",
+      "breed": "dog",
+      "employeeId": 2,
+      "id": 10
+    },
+    {
+      "name": "Taco",
+      "breed": "Huskey",
+      "employeeId": 3,
+      "id": 11
+    },
+    {
+      "name": "Matto",
+      "breed": "Besenji",
       "employeeId": 1,
-      "id": 7
-    },
-    {
-      "name": "Sade",
-      "breed": "Sharpe",
-      "employeeId": 2,
-      "id": 8
+      "id": 12
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Jessica Younker",
-      "employeeIdx": 1
+      "employeeIdx": 90000909900,
+      "locationId": 1
     },
     {
       "id": 2,
-      "name": "Jordan Nelson",
-      "employeeIdx": 2
+      "name": "Holly Reed",
+      "employeeIdx": 90000709900,
+      "locationId": 1
     },
     {
       "id": 3,
       "name": "Zoe LeBlanc",
-      "employeeIdx": 3
+      "employeeIdx": 38990900,
+      "locationId": 3
     }
   ],
   "locations": [
@@ -74,24 +71,8 @@
       "location": "West Nashville"
     },
     {
-      "location": "Spring Hill",
-      "id": 5
-    },
-    {
       "location": "Brentwood",
       "id": 6
-    },
-    {
-      "location": "Columbia",
-      "id": 7
-    },
-    {
-      "location": "Spring Hill",
-      "id": 8
-    },
-    {
-      "location": "Columbia",
-      "id": 9
     }
   ],
   "owners": [

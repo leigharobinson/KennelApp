@@ -3,7 +3,11 @@ import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalForm.css";
 import EmployeeManager from "../../modules/EmployeeManager";
 const AnimalEditForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
+  const [animal, setAnimal] = useState({
+    name: "",
+    breed: "",
+    employeeId: 0,
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -21,7 +25,7 @@ const AnimalEditForm = (props) => {
       id: props.match.params.animalId,
       name: animal.name,
       breed: animal.breed,
-      employeeId: animal.employeeId,
+      employeeId: parseInt(animal.employeeId),
     };
 
     AnimalManager.update(editedAnimal).then(() =>
@@ -82,6 +86,7 @@ const AnimalEditForm = (props) => {
               value={animal.employeeId}
               onChange={handleFieldChange}
             >
+              {/* <option>Select Caretaker</option> */}
               {employees.map((employee) => (
                 <option key={employee.id} value={employee.id}>
                   {employee.name}

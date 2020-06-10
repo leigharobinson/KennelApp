@@ -30,7 +30,7 @@ const EmployeeCard = (props) => {
           type="button"
           onClick={() => props.deleteEmployee(props.employee.id)}
         >
-          Fire
+          Delete
         </button>
       </div>
     </div>

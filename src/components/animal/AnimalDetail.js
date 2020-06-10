@@ -3,24 +3,32 @@ import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
 import { firstLetterCase } from "../../modules/helpers";
+import EmployeeManager from "../../modules/EmployeeManager";
 
 const AnimalDetail = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
+  const [animal, setAnimal] = useState({
+    name: "",
+    breed: "",
+    employeeName: "",
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     //get(id) from AnimalManager and hang on to the data; put it into state
     AnimalManager.get(props.animalId).then((animal) => {
       if (animal.id) {
-        setAnimal({
-          name: firstLetterCase(animal.name),
-          breed: firstLetterCase(animal.breed),
-          employee: animal.employeeId,
+        //so cool that I can get employee's id to match with forien key employeeId
+        EmployeeManager.get(animal.employeeId).then((employee) => {
+          //Look I have access to both Employees and Animals now, Woot!
+          setAnimal({
+            name: firstLetterCase(animal.name),
+            breed: firstLetterCase(animal.breed),
+            employeeName: employee.name,
+          });
         });
       } else {
         props.history.push("/noIdinDB");
       }
-      // setIsLoading(false);
     });
   }, [props.animalId]);
 
@@ -42,7 +50,7 @@ const AnimalDetail = (props) => {
           Name: <span style={{ color: "darkslategrey" }}>{animal.name}</span>
         </h3>
         <p>Breed: {animal.breed}</p>
-        <p>Assigned Employee: {animal.employeeId}</p>
+        <p>Assigned Employee: {animal.employeeName}</p>
 
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge
