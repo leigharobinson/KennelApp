@@ -4,7 +4,11 @@ import EmployeeManager from "../../modules/EmployeeManager";
 import "./AnimalForm.css";
 
 const AnimalForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: [] });
+  const [animal, setAnimal] = useState({
+    name: "",
+    breed: "",
+    employeeId: 0,
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -17,12 +21,14 @@ const AnimalForm = (props) => {
    */
   const constructNewAnimal = (evt) => {
     evt.preventDefault();
-    if (!animal.name || !animal.breed || !animal.employeeId) {
+    if (!animal.name || !animal.breed || !Number(animal.employeeId)) {
       window.alert("Please input an animal name and breed and Employee");
     } else {
       setIsLoading(true);
       // Create the animal and redirect user to animal list
-      AnimalManager.post(animal).then(() => props.history.push("/animals"));
+      const newAnimal = { ...animal };
+      newAnimal.employeeId = parseInt(newAnimal.employeeId);
+      AnimalManager.post(newAnimal).then(() => props.history.push("/animals"));
     }
   };
   const [employees, setEmployees] = useState([]);
@@ -65,9 +71,10 @@ const AnimalForm = (props) => {
             <select
               className="form-control"
               id="employeeId"
-              value={animal.employeeId}
+              value={Number(animal.employeeId)}
               onChange={handleFieldChange}
             >
+              <option>Select Caretaker</option>
               {employees.map((employee) => (
                 <option key={employee.id} value={employee.id}>
                   {employee.name}
