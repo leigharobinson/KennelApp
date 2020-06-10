@@ -1,67 +1,60 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "Doodles",
-      "breed": "German Sheperd",
-      "employeeId": 3
-    },
-    {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull",
-      "employeeId": "1"
-    },
-    {
-      "name": "Jack",
-      "breed": "Big cat",
-      "id": 4,
+      "id": 1,
+      "name": "Domino",
+      "breed": "Dalmatian ",
       "employeeId": 1
     },
     {
-      "id": 5,
-      "name": "Angus",
-      "breed": "Gerbil",
+      "id": 3,
+      "name": "Moca",
+      "breed": "german shepherd",
       "employeeId": 3
     },
     {
-      "name": "Babe Ruth",
-      "breed": "Hound",
-      "employeeId": 2,
-      "id": 6
+      "id": 8,
+      "name": "Batdog",
+      "breed": "Terrier ",
+      "employeeId": 3
     },
     {
-      "name": "DOG",
-      "breed": "DOG",
+      "name": "Lukess",
+      "breed": "dog",
+      "employeeId": 2,
+      "id": 10
+    },
+    {
+      "name": "Taco",
+      "breed": "Huskey",
       "employeeId": 3,
-      "id": 7
+      "id": 11
+    },
+    {
+      "name": "Matto",
+      "breed": "Besenji",
+      "employeeId": 1,
+      "id": 12
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Jessica Younker",
-      "employeeIdx": 90000909900
+      "employeeIdx": 90000909900,
+      "locationId": 1
     },
     {
       "id": 2,
-      "name": "Jordan Nelson",
-      "employeeIdx": 290090999
+      "name": "Holly Reed",
+      "employeeIdx": 90000709900,
+      "locationId": 1
     },
     {
       "id": 3,
       "name": "Zoe LeBlanc",
-      "employeeIdx": 38990900
-    },
-    {
-      "name": "Steeve",
-      "employeeIdx": 9898098809,
-      "id": 4
-    },
-    {
-      "name": "Marshelll",
-      "employeeIdx": 909099837938,
-      "id": 5
+      "employeeIdx": 38990900,
+      "locationId": 3
     }
   ],
   "locations": [
